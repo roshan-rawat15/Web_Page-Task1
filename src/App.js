@@ -11,6 +11,7 @@ import NextSection from "./components/NextSection";
 import FooterSection from "./components/FooterSection";
 import About from "./pages/About";  // Imported About page
 import "./index.css";
+
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 

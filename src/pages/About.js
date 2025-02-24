@@ -37,36 +37,41 @@ const About = () => {
 
 const AboutUs = () => {
   return (
-    <section className="w-full bg-white py-16 px-6 md:px-20">
-      <h2 className="text-4xl font-extrabold text-gray-800 mb-8 text-center underline decoration-blue-500 underline-offset-8">
+    <section className="w-full bg-white py-24 px-6 md:px-20"> {/* Increased padding for longer section */}
+      <h2 className="text-4xl font-extrabold text-gray-800 mb-8 text-left">
         Overview
       </h2>
       <div className="grid md:grid-cols-2 gap-10 items-start">
-        <div className="text-lg leading-relaxed text-gray-700 space-y-6">
+        <div className="text-lg leading-relaxed text-gray-700 space-y-8"> {/* Increased spacing */}
           <p>
-            B.G.S was founded in 2014 as one of India's original Project Outsourcing
-            start-ups, bridging gaps in process management and outsourcing. Our mission
-            is to provide high-quality, low-cost, and applicable solutions.
+          B.G.S was found in 2014 as one of India's original Project Outsourcing start-ups, with an aim to bridge gaps in process management and outsourcing. We started as project outsourcing firm and later on moved into different zones with a motto of providing high-quality, low-cost, and applicable interventions to handle gaps.
           </p>
           <p>
-            With a presence in over 5 cities, BGS has expanded into technology, wealth
-            management, and talent management, achieving significant milestones in a
-            short period.
+          Today, the BGS enterprise has its presence across varied sectors that include technology, wealth management and talent management solutions. We have expanded to more than 5 cities in less than two years and are going at great velocity towards greater heights.
           </p>
           <p>
-            We believe aspiration meets innovation, candor fuels collaboration, and
-            teamwork achieves the extraordinary.
+          We believe aspiration meets innovation, candor fuels collaboration, and
+          teamwork achieves the extraordinary.
           </p>
           <p>
-            Our experienced team, technology enablers, and standardized processes drive
-            our high client retention rate and consistent performance.
+          Our energy has been focused on creating an experienced team, developing technology enablers and institutionalizing standardized processes. Our strong research and consistent outperformance, while maintaining high standards of client servicing are testaments to the robustness of the model.
+          </p>
+          {/* ✅ Added extra content for extended length */}
+          <p>
+          We have consistently grown with clients through referrals and have a very high customer retention rate.
+          </p>
+          <p>
+          We seek out people and clients who challenge themselves to be exceptional—and champion that spirit in others. We’re guided by True North, our unwavering commitment to always do the right thing by our clients, people and communities.
+          </p>
+          <p>
+          We define a bold ambition with clients, then work together as one team to create such high levels of value that we set new standards of excellence for our industries.
           </p>
         </div>
         <div className="border-4 border-blue-400 p-8 rounded-3xl shadow-xl bg-gray-50">
           <img
             src={singleImage}
             alt="Success Team"
-            className="w-full h-64 object-cover rounded-2xl mb-6 shadow-md"
+            className="w-full h-72 object-cover rounded-2xl mb-6 shadow-md" // 🔥 Increased height for visibility
           />
           <h3 className="text-2xl font-semibold text-gray-800 text-center mb-4">
             Be a Part of Success Story Building Team
@@ -159,37 +164,38 @@ const CoreValuesSection = () => {
           <h2 className="text-4xl font-bold text-gray-800 mb-6 tracking-wide">
             Our Core Values
           </h2>
+          <p>
+          Bridge Group Solutions hold our associates, customers, employees, as well as our community in the highest regard, where we incorporate both the needs of our company, as well as the needs of our ever-changing world into our culture. Our core values are the backbone to our company which resonate with our vision:
+          </p>
           <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
             <div>
               <h3 className="text-xl font-semibold text-gray-900">People</h3>
               <p>
-                We care, respect, and show humanity for colleagues, associates, and customers,
-                always working for the communities we serve.
+              We must be caring, show respect, compassion and humanity for our colleagues, associates and customers around the world, and always work for the benefit of the communities we serve.
               </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-gray-900">Integrity</h3>
               <p>
-                We operate with integrity and respect for everyone we encounter on our business
-                journey.
+              Conducting our operations with integrity and with the respect for the each people, business associate whom we touch in different juncture of our business journey.
               </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-gray-900">Customer Delight</h3>
               <p>
-                We foster a customer-centric culture aligned with delivering superior value.
+              We are committed to foster customer centric culture where our processes, services and innovations are aligned around customer/franchisee/business associate expectations.
               </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-gray-900">Excellence</h3>
               <p>
-                We strive for the highest standards in execution and service quality at affordable costs.
+              We must constantly strive to achieve the highest possible standards in our execution and in the quality of the services we provide at affordable cost and need based solutions.
               </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-gray-900">Trust</h3>
               <p>
-                Trust forms the foundation of our relationships, cultivated daily through accountability.
+              We as team believe that the trust is the foundation of our relationship with our associates, franchisee, customer and employees and we cultivate it every day by being accountable of every single property transaction we offer.
               </p>
             </div>
           </div>
@@ -255,7 +261,7 @@ const ClientTestimonialsSection = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
       { breakpoint: 768, settings: { slidesToShow: 1 } },
