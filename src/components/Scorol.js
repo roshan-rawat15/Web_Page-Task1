@@ -1,26 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
-import { motion, useMotionValue, animate } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const ImageCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
-  const slideMotion = useMotionValue(currentSlide); // Motion value for animation
-
-  useEffect(() => {
-    const controls = animate(slideMotion, currentSlide, {
-      duration: 0.5,
-      ease: "easeInOut",
-      onUpdate: (latest) => setCurrentSlide(Math.floor(latest)),
-    });
-    return controls.stop;
-  }, [currentSlide, slideMotion]);
 
   const settings = {
     dots: false,
     infinite: true,
-    speed: 800,
+    speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
@@ -50,50 +39,32 @@ const ImageCarousel = () => {
   ];
 
   return (
-    <div className="container mx-auto py-16 px-4 md:px-8">
-      <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-6 tracking-wide">
+    <div className="container mx-auto py-12 px-4 md:px-8">
+      <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
         ⭐ STAR PERFORMER OF THE WEEK ⭐
       </h2>
 
-      {/* ✅ Real-time animated counter */}
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
-        className="text-center text-lg font-semibold text-gray-600 mb-4"
-      >
-        Showing{" "}
-        <motion.span
-          className="text-pink-500 text-2xl"
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
-        >
-          {currentSlide}
-        </motion.span>{" "}
-        of{" "}
-        <span className="text-purple-500 text-2xl">{images.length}</span> performers
-      </motion.div>
+      <div className="text-center text-lg text-gray-600 mb-4">
+        Showing <span className="text-pink-500 font-semibold">{currentSlide}</span> of
+        <span className="text-purple-500 font-semibold"> {images.length}</span> performers
+      </div>
 
       <Slider {...settings}>
         {images.map((img, index) => (
-          <motion.div
+          <div
             key={index}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ scale: 1.05 }}
-            className="p-4 flex justify-center items-center bg-gradient-to-r from-purple-300 via-pink-300 to-red-300 rounded-2xl shadow-2xl h-[260px] transition-all duration-500"
+            className="p-4 flex justify-center items-center bg-gray-100 rounded-xl shadow-md h-[260px]"
           >
             <img
               src={img}
               alt={`Slide ${index + 1}`}
-              className="w-full max-w-[350px] h-full object-cover rounded-xl shadow-lg transition-transform duration-500"
+              className="w-full max-w-[350px] h-full object-cover rounded-lg"
             />
-          </motion.div>
+          </div>
         ))}
       </Slider>
     </div>
   );
 };
 
-export default ImageCarousel;
+export default ImageCarousel; 
